@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="MUEVET+ — Movimiento, salud y rendimiento. Entrenamiento personalizado, antropometría ISAK y RUN+++ en Cantabria.">
+<meta name="theme-color" content="#0B0B0B">
+<title>MUEVET+ | Mueve más. Vive mejor.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0B0B0B;
+  --black2:#111111;
+  --black3:#1A1A1A;
+  --white:#FFFFFF;
+  --gray:#888888;
+  --gray2:#444444;
+  --lime:#C8E000;
+  --lime-dim:#a8bc00;
+  --olive:#5C6B2E;
+  --olive-light:#7a8e3e;
+  --cream:#F5F0E8;
+  --font-display:'Bebas Neue',sans-serif;
+  --font-condensed:'Barlow Condensed',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--lime)}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;
+  padding:12px 20px;
+  background:rgba(11,11,11,0.9);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(200,224,0,0.08);
+  transition:all .3s ease;
+}
+.nav-links{
+  display:flex;align-items:center;gap:4px;
+  flex:1;
+  justify-content:center;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{
+  font-family:var(--font-condensed);
+  font-size:13px;font-weight:700;
+  letter-spacing:.5px;
+  color:rgba(255,255,255,0.55);
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:8px;
+  white-space:nowrap;
+  transition:color .2s,background .2s;
+  -webkit-tap-highlight-color:transparent;
+  text-transform:uppercase;
+}
+.nav-link:active,.nav-link:hover{color:var(--lime);background:rgba(200,224,0,0.06)}
+.nav-logo{
+  height:36px;
+  width:36px;
+  object-fit:contain;
+}
+.nav-cta{
+  background:var(--lime);
+  color:var(--black);
+  border:none;
+  border-radius:100px;
+  padding:9px 20px;
+  font-family:var(--font-condensed);
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:.5px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:all .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.nav-cta:active{transform:scale(.96);background:var(--lime-dim)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:0 24px 52px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  z-index:0;
+  filter:brightness(0.35) saturate(0.6);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top, rgba(11,11,11,1) 0%, rgba(11,11,11,0.55) 40%, rgba(11,11,11,0.15) 100%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(200,224,0,0.06) 0%, transparent 70%);
+  z-index:1;
+}
+
+.hero-logo{
+  width:56px;height:56px;
+  object-fit:contain;
+  margin-bottom:20px;
+  display:block;
+}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-content{position:relative;z-index:2;animation:fadeUp 1s .2s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:20px;
+}
+.hero-meta-pill{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:100px;
+  padding:6px 14px;
+  font-size:12px;
+  font-weight:500;
+  color:rgba(255,255,255,0.75);
+  letter-spacing:.2px;
+}
+.hero-eyebrow{
+  font-family:var(--font-condensed);
+  font-size:11px;font-weight:700;
+  letter-spacing:3px;
+  color:var(--lime);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-size:clamp(52px,14vw,80px);
+  line-height:.95;
+  letter-spacing:1px;
+  margin-bottom:16px;
+}
+.hero-title span{color:var(--lime)}
+.hero-sub{
+  font-size:15px;
+  line-height:1.6;
+  color:rgba(255,255,255,0.6);
+  max-width:320px;
+  margin-bottom:32px;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--lime);
+  color:var(--black);
+  border:none;border-radius:100px;
+  padding:14px 28px;
+  font-family:var(--font-condensed);
+  font-weight:800;font-size:16px;
+  letter-spacing:.5px;
+  cursor:pointer;text-decoration:none;
+  transition:all .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-primary:active{transform:scale(.97);background:var(--lime-dim)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:100px;
+  padding:14px 24px;
+  font-family:var(--font-condensed);
+  font-weight:700;font-size:16px;
+  cursor:pointer;text-decoration:none;
+  transition:all .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-ghost:active{background:rgba(255,255,255,0.08)}
+
+.scroll-indicator{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  z-index:2;animation:float 2s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+.scroll-indicator span{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase}
+.scroll-indicator svg{opacity:.3}
+
+/* ── SECTIONS COMMON ── */
+section{padding:80px 24px}
+.section-eyebrow{
+  font-family:var(--font-condensed);
+  font-size:11px;font-weight:700;
+  letter-spacing:3px;
+  color:var(--lime);
+  text-transform:uppercase;
+  margin-bottom:12px;
+  display:block;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(36px,10vw,56px);
+  line-height:.95;
+  margin-bottom:16px;
+}
+.section-body{
+  font-size:15px;line-height:1.7;
+  color:rgba(255,255,255,0.6);
+}
+.divider{
+  width:40px;height:2px;
+  background:var(--lime);
+  margin:20px 0;
+}
+
+/* ── FILOSOFIA ── */
+#filosofia{background:var(--black)}
+.filo-quote{
+  font-family:var(--font-display);
+  font-size:clamp(32px,9vw,52px);
+  line-height:1;
+  margin-bottom:24px;
+}
+.filo-quote em{
+  font-style:normal;
+  color:var(--lime);
+}
+.filo-pills{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-top:32px;
+}
+.pill{
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:100px;
+  padding:8px 16px;
+  font-size:13px;
+  font-weight:500;
+  color:rgba(255,255,255,0.7);
+  letter-spacing:.3px;
+}
+.pill.accent{
+  background:rgba(200,224,0,0.08);
+  border-color:rgba(200,224,0,0.3);
+  color:var(--lime);
+}
+
+/* ── SOBRE MÍ ── */
+#sobre-mi{background:var(--black2);padding-top:0}
+.victor-photo-wrap{
+  position:relative;
+  width:100%;
+  margin-bottom:32px;
+  overflow:hidden;
+}
+.victor-photo{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:top center;
+  filter:grayscale(10%) contrast(1.05);
+  display:block;
+}
+.victor-photo-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  height:160px;
+  background:linear-gradient(to top, var(--black2) 0%, transparent 100%);
+}
+.victor-name-badge{
+  position:absolute;bottom:20px;left:20px;
+  display:flex;flex-direction:column;
+}
+.victor-name{
+  font-family:var(--font-display);
+  font-size:32px;
+  line-height:1;
+}
+.victor-role{
+  font-size:12px;
+  color:var(--lime);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.credentials{
+  display:flex;flex-direction:column;gap:12px;
+  margin-top:8px;
+}
+.credential-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:14px;
+  padding:14px 16px;
+  transition:all .2s;
+}
+.credential-item:active{border-color:var(--lime);background:rgba(200,224,0,0.05)}
+.credential-icon{
+  font-size:20px;
+  width:40px;height:40px;
+  background:rgba(200,224,0,0.08);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.credential-text{
+  font-size:14px;
+  font-weight:500;
+  color:rgba(255,255,255,0.85);
+}
+.victor-copy{
+  margin-top:24px;
+  font-size:15px;
+  line-height:1.7;
+  color:rgba(255,255,255,0.6);
+  border-left:2px solid var(--lime);
+  padding-left:16px;
+}
+
+/* ── SERVICIOS CARDS ── */
+#servicios{background:var(--black)}
+.services-stack{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+
+/* ISAK CARD */
+.service-card{
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  min-height:480px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+}
+.service-card-bg{
+  position:absolute;inset:0;
+  object-fit:cover;
+  width:100%;height:100%;
+}
+.service-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+}
+.service-card-content{
+  position:relative;z-index:1;
+  padding:24px;
+}
+.service-tag{
+  display:inline-block;
+  background:rgba(200,224,0,0.15);
+  border:1px solid rgba(200,224,0,0.4);
+  color:var(--lime);
+  font-family:var(--font-condensed);
+  font-size:11px;font-weight:700;
+  letter-spacing:2px;
+  padding:4px 12px;
+  border-radius:100px;
+  margin-bottom:12px;
+  text-transform:uppercase;
+}
+.service-tag.olive{
+  background:rgba(92,107,46,0.2);
+  border-color:rgba(92,107,46,0.5);
+  color:#a0b85a;
+}
+.service-title{
+  font-family:var(--font-display);
+  font-size:clamp(38px,10vw,52px);
+  line-height:.95;
+  margin-bottom:8px;
+}
+.service-price{
+  font-family:var(--font-condensed);
+  font-size:28px;font-weight:800;
+  color:var(--lime);
+  margin-bottom:12px;
+}
+.service-price.olive{color:#a0b85a}
+.service-desc{
+  font-size:14px;line-height:1.6;
+  color:rgba(255,255,255,0.65);
+  margin-bottom:20px;
+}
+.service-features{
+  display:flex;flex-direction:column;gap:7px;
+  margin-bottom:24px;
+}
+.service-feature{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;
+  color:rgba(255,255,255,0.7);
+}
+.service-feature::before{
+  content:"";
+  width:6px;height:6px;
+  background:var(--lime);
+  border-radius:50%;
+  flex-shrink:0;
+}
+.service-feature.olive-dot::before{background:#a0b85a}
+
+/* ATHLETE CARD — special */
+.service-card.featured{
+  border:1px solid rgba(92,107,46,0.4);
+  box-shadow:0 0 40px rgba(92,107,46,0.15);
+}
+.featured-badge{
+  position:absolute;top:16px;right:16px;z-index:2;
+  background:var(--olive);
+  color:var(--white);
+  font-family:var(--font-condensed);
+  font-size:11px;font-weight:800;
+  letter-spacing:1px;
+  padding:6px 14px;
+  border-radius:100px;
+  text-transform:uppercase;
+}
+
+/* RUN CARD — cream bg */
+.service-card.run-card{
+  background:var(--cream);
+  min-height:420px;
+  border:none;
+}
+.run-card-inner{
+  position:relative;z-index:1;
+  padding:24px;
+  height:100%;
+  display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.run-logo-img{
+  width:140px;
+  object-fit:contain;
+  margin-bottom:16px;
+}
+.run-mantra{
+  font-family:var(--font-display);
+  font-size:clamp(38px,10vw,52px);
+  line-height:.95;
+  color:var(--black);
+  margin-bottom:12px;
+}
+.run-mantra span{color:var(--black)}
+.run-desc{
+  font-size:14px;line-height:1.6;
+  color:rgba(0,0,0,0.6);
+  margin-bottom:20px;
+}
+.run-pills{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:24px;
+}
+.run-pill{
+  background:rgba(0,0,0,0.07);
+  border-radius:100px;
+  padding:6px 14px;
+  font-size:12px;font-weight:600;
+  color:rgba(0,0,0,0.7);
+  letter-spacing:.3px;
+}
+.btn-dark{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--black);
+  color:var(--white);
+  border:none;border-radius:100px;
+  padding:14px 24px;
+  font-family:var(--font-condensed);
+  font-weight:800;font-size:16px;
+  cursor:pointer;text-decoration:none;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+  width:fit-content;
+}
+.btn-dark:active{transform:scale(.97)}
+.run-video-wrap{
+  position:relative;
+  width:100%;
+  height:200px;
+  border-radius:14px;
+  overflow:hidden;
+  margin:16px 0;
+  flex-shrink:0;
+}
+.run-video{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.run-video-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+}
+.run-video-label{
+  position:absolute;bottom:12px;left:14px;
+  font-family:var(--font-condensed);
+  font-size:13px;font-weight:800;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.9);
+  text-shadow:0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* ── PLANES ── */
+#planes{background:var(--black2)}
+.planes-grid{
+  display:flex;flex-direction:column;gap:12px;
+  margin-top:32px;
+}
+.plan-card{
+  border-radius:18px;
+  border:1px solid var(--gray2);
+  padding:24px;
+  background:var(--black3);
+  position:relative;
+  transition:all .2s;
+}
+.plan-card.featured-plan{
+  border-color:rgba(92,107,46,0.5);
+  background:linear-gradient(135deg, rgba(92,107,46,0.12) 0%, var(--black3) 60%);
+  box-shadow:0 0 30px rgba(92,107,46,0.1);
+}
+.plan-badge{
+  position:absolute;top:-10px;left:24px;
+  background:var(--olive);
+  color:white;
+  font-family:var(--font-condensed);
+  font-size:10px;font-weight:800;
+  letter-spacing:1.5px;
+  padding:4px 12px;
+  border-radius:100px;
+  text-transform:uppercase;
+}
+.plan-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:12px;
+}
+.plan-name{
+  font-family:var(--font-display);
+  font-size:28px;line-height:1;
+}
+.plan-price-wrap{text-align:right}
+.plan-price{
+  font-family:var(--font-display);
+  font-size:36px;line-height:1;
+  color:var(--lime);
+}
+.plan-price.olive{color:#a0b85a}
+.plan-period{
+  font-size:11px;color:var(--gray);
+  letter-spacing:1px;
+}
+.plan-desc{
+  font-size:13px;line-height:1.6;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:16px;
+}
+.plan-features{
+  display:flex;flex-direction:column;gap:8px;
+  margin-bottom:20px;
+}
+.plan-feature{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;color:rgba(255,255,255,0.7);
+}
+.plan-feature svg{flex-shrink:0}
+.btn-plan{
+  display:block;
+  text-align:center;
+  background:var(--lime);
+  color:var(--black);
+  border:none;border-radius:100px;
+  padding:13px;
+  font-family:var(--font-condensed);
+  font-weight:800;font-size:15px;
+  cursor:pointer;text-decoration:none;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+  width:100%;
+}
+.btn-plan:active{transform:scale(.98);background:var(--lime-dim)}
+.btn-plan.olive-btn{background:var(--olive);color:white}
+.btn-plan.ghost-plan{
+  background:transparent;
+  color:var(--white);
+  border:1px solid var(--gray2);
+}
+
+/* ── ISAK CAROUSEL ── */
+#isak-carousel{background:var(--black);padding:48px 0}
+.carousel-header{padding:0 24px;margin-bottom:24px}
+.carousel-track{
+  display:flex;gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding:0 24px 16px;
+  scrollbar-width:none;
+}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-slide{
+  flex-shrink:0;
+  width:260px;
+  height:360px;
+  border-radius:16px;
+  overflow:hidden;
+  scroll-snap-align:start;
+  position:relative;
+}
+.carousel-slide img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:top center;
+}
+.carousel-slide-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+}
+.carousel-caption{
+  position:absolute;bottom:16px;left:16px;right:16px;
+  font-family:var(--font-condensed);
+  font-size:16px;font-weight:700;
+  letter-spacing:.5px;
+}
+
+/* ── PROCESO ── */
+#proceso{background:var(--black2)}
+.proceso-steps{
+  display:flex;flex-direction:column;
+  gap:0;
+  margin-top:32px;
+}
+.proceso-step{
+  display:flex;align-items:flex-start;gap:16px;
+  position:relative;
+  padding-bottom:32px;
+}
+.proceso-step:last-child{padding-bottom:0}
+.step-left{
+  display:flex;flex-direction:column;align-items:center;
+  flex-shrink:0;
+}
+.step-num{
+  width:44px;height:44px;
+  border-radius:50%;
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);
+  font-size:20px;
+  color:var(--lime);
+  flex-shrink:0;
+}
+.step-line{
+  width:1px;
+  flex:1;
+  background:linear-gradient(to bottom, var(--gray2), transparent);
+  margin-top:8px;
+  min-height:40px;
+}
+.step-content{padding-top:8px}
+.step-title{
+  font-family:var(--font-condensed);
+  font-size:20px;font-weight:800;
+  margin-bottom:4px;
+  letter-spacing:.3px;
+}
+.step-desc{
+  font-size:13px;
+  color:rgba(255,255,255,0.5);
+  line-height:1.5;
+}
+
+/* ── PARA QUIÉN ── */
+#para-quien{background:var(--black)}
+.audience-grid{
+  display:flex;flex-direction:column;gap:10px;
+  margin-top:28px;
+}
+.audience-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:14px;
+  padding:16px;
+  transition:all .2s;
+}
+.audience-item:active{border-color:var(--lime);background:rgba(200,224,0,0.04)}
+.audience-emoji{
+  font-size:24px;
+  width:44px;height:44px;
+  background:var(--black2);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.audience-text{
+  font-size:15px;font-weight:500;
+  color:rgba(255,255,255,0.8);
+}
+
+/* ── STATS ── */
+#stats{
+  background:var(--black2);
+  padding:60px 24px;
+}
+.stats-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:32px;
+}
+.stat-card{
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:18px;
+  padding:24px 16px;
+  text-align:center;
+}
+.stat-number{
+  font-family:var(--font-display);
+  font-size:48px;
+  line-height:1;
+  color:var(--lime);
+  display:block;
+  margin-bottom:6px;
+}
+.stat-label{
+  font-size:12px;
+  color:rgba(255,255,255,0.5);
+  letter-spacing:.5px;
+  line-height:1.4;
+}
+
+/* ── INSTAGRAM ── */
+#instagram{background:var(--black);padding:64px 24px}
+.ig-header{margin-bottom:28px}
+.ig-handle{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:20px;
+}
+.ig-avatar{
+  width:48px;height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--lime);
+}
+.ig-name{
+  font-weight:600;font-size:15px;
+}
+.ig-at{
+  font-size:13px;color:var(--gray);
+}
+.ig-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:3px;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:24px;
+}
+.ig-cell{
+  aspect-ratio:1;
+  overflow:hidden;
+  background:var(--black3);
+  position:relative;
+}
+.ig-cell img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .3s ease;
+}
+.ig-cell:active img{transform:scale(1.05)}
+.ig-label{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,0.5);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-condensed);
+  font-size:11px;font-weight:700;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.9);
+  text-transform:uppercase;
+}
+.btn-ig{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px;
+  padding:14px;
+  font-family:var(--font-condensed);
+  font-weight:700;font-size:16px;
+  color:var(--white);
+  text-decoration:none;
+  cursor:pointer;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-ig:active{background:rgba(255,255,255,0.06)}
+
+/* ── CTA FINAL ── */
+#cta-final{
+  background:var(--black2);
+  padding:80px 24px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cta-glow{
+  position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  width:400px;height:400px;
+  background:radial-gradient(circle, rgba(200,224,0,0.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+.cta-eyebrow{
+  font-family:var(--font-condensed);
+  font-size:12px;font-weight:700;
+  letter-spacing:3px;
+  color:var(--lime);
+  text-transform:uppercase;
+  margin-bottom:16px;
+  display:block;
+}
+.cta-title{
+  font-family:var(--font-display);
+  font-size:clamp(52px,15vw,80px);
+  line-height:.9;
+  margin-bottom:16px;
+  position:relative;z-index:1;
+}
+.cta-sub{
+  font-size:15px;
+  color:rgba(255,255,255,0.5);
+  line-height:1.6;
+  max-width:300px;
+  margin:0 auto 36px;
+  position:relative;z-index:1;
+}
+.btn-cta-big{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--lime);
+  color:var(--black);
+  border:none;border-radius:100px;
+  padding:18px 36px;
+  font-family:var(--font-condensed);
+  font-weight:800;font-size:20px;
+  letter-spacing:.5px;
+  cursor:pointer;text-decoration:none;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+  position:relative;z-index:1;
+}
+.btn-cta-big:active{transform:scale(.97);background:var(--lime-dim)}
+
+/* ── CONTACTO ── */
+#contacto{background:var(--black);padding:64px 24px}
+.contact-items{
+  display:flex;flex-direction:column;gap:12px;
+  margin-top:28px;
+}
+.contact-item{
+  display:flex;align-items:center;gap:16px;
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:16px;
+  padding:18px 20px;
+  text-decoration:none;
+  color:var(--white);
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.contact-item:active{border-color:var(--lime);transform:scale(.99)}
+.contact-icon{
+  width:44px;height:44px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-size:20px;
+}
+.contact-icon.ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.contact-icon.wa{background:#25D366}
+.contact-icon.em{background:var(--black2);border:1px solid var(--gray2)}
+.contact-label{
+  font-size:11px;
+  color:var(--gray);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:2px;
+}
+.contact-value{
+  font-size:15px;font-weight:500;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--black2);
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:32px 24px 40px;
+  text-align:center;
+}
+.footer-logo{
+  width:48px;height:48px;
+  object-fit:contain;
+  margin:0 auto 20px;
+  display:block;
+}
+.footer-social{
+  display:flex;justify-content:center;gap:16px;
+  margin-bottom:24px;
+}
+.footer-social a{
+  width:40px;height:40px;
+  border:1px solid var(--gray2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  color:var(--gray);
+  font-size:16px;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.footer-social a:active{border-color:var(--lime);color:var(--lime)}
+.footer-copy{
+  font-size:12px;
+  color:rgba(255,255,255,0.25);
+  line-height:1.8;
+  letter-spacing:.3px;
+}
+.footer-copy span{color:rgba(200,224,0,0.5)}
+
+/* ── SCROLL ANIMATIONS ── */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{
+  opacity:0;transform:translateX(-20px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+
+/* ── TICKER ── */
+.ticker-wrap{
+  overflow:hidden;
+  background:var(--lime);
+  padding:12px 0;
+  white-space:nowrap;
+}
+.ticker-inner{
+  display:inline-flex;
+  animation:ticker 18s linear infinite;
+}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{
+  font-family:var(--font-condensed);
+  font-size:14px;font-weight:800;
+  letter-spacing:2px;
+  color:var(--black);
+  text-transform:uppercase;
+  padding:0 24px;
+}
+.ticker-dot{color:rgba(0,0,0,0.4);margin:0 4px}
+
+/* ── RESPONSIVE TABLET ── */
+@media(min-width:640px){
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
+  .planes-grid{display:grid;grid-template-columns:1fr 1fr}
+  .planes-grid .featured-plan{grid-column:span 2}
+}
+@media(min-width:768px){
+  .planes-grid .featured-plan{grid-column:span 1}
+  .planes-grid{grid-template-columns:repeat(3,1fr)}
+  .services-stack{display:grid;grid-template-columns:1fr 1fr}
+  .service-card.featured{grid-column:span 2}
+}
+
+/* ── STICKY BOTTOM BAR ── */
+.sticky-bar{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:99;
+  padding:12px 20px 20px;
+  background:linear-gradient(to top, rgba(11,11,11,1) 0%, rgba(11,11,11,0.95) 80%, transparent 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:translateY(100%);
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+.sticky-bar.visible{
+  transform:translateY(0);
+  pointer-events:all;
+}
+.sticky-bar-inner{
+  display:flex;align-items:center;gap:12px;
+  width:100%;max-width:400px;
+}
+.sticky-bar-text{
+  font-size:13px;
+  color:rgba(255,255,255,0.55);
+  flex:1;
+  line-height:1.3;
+}
+.sticky-bar-text strong{color:var(--lime)}
+.btn-sticky{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--lime);
+  color:var(--black);
+  border:none;border-radius:100px;
+  padding:12px 22px;
+  font-family:var(--font-condensed);
+  font-weight:800;font-size:15px;
+  cursor:pointer;text-decoration:none;
+  transition:all .2s;
+  white-space:nowrap;
+  flex-shrink:0;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-sticky:active{transform:scale(.97);background:var(--lime-dim)}
+
+/* ── URGENCIA BANNER ── */
+.urgencia-banner{
+  background:rgba(200,224,0,0.07);
+  border:1px solid rgba(200,224,0,0.2);
+  border-radius:14px;
+  padding:16px 20px;
+  display:flex;align-items:center;gap:14px;
+  margin-top:24px;
+}
+.urgencia-dot{
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--lime);
+  flex-shrink:0;
+  animation:blink 1.5s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.urgencia-text{
+  font-size:14px;
+  color:rgba(255,255,255,0.8);
+  line-height:1.4;
+}
+.urgencia-text strong{color:var(--lime)}
+
+/* ── TESTIMONIOS ── */
+#testimonios{background:var(--black);padding:80px 24px}
+.testimonios-grid{
+  display:flex;flex-direction:column;gap:14px;
+  margin-top:32px;
+}
+.testimonio-card{
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:18px;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+}
+.testimonio-card::before{
+  content:'"';
+  position:absolute;top:-10px;right:16px;
+  font-family:var(--font-display);
+  font-size:120px;
+  color:rgba(200,224,0,0.06);
+  line-height:1;
+  pointer-events:none;
+}
+.testimonio-stars{
+  display:flex;gap:3px;
+  margin-bottom:12px;
+}
+.star{
+  color:var(--lime);
+  font-size:14px;
+}
+.testimonio-text{
+  font-size:15px;
+  line-height:1.65;
+  color:rgba(255,255,255,0.8);
+  margin-bottom:16px;
+  font-style:italic;
+}
+.testimonio-footer{
+  display:flex;align-items:center;gap:10px;
+}
+.testimonio-avatar{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg, var(--black2), var(--gray2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);
+  font-size:16px;
+  color:var(--lime);
+  flex-shrink:0;
+}
+.testimonio-name{
+  font-size:14px;font-weight:600;
+  line-height:1.2;
+}
+.testimonio-service{
+  font-size:11px;
+  color:var(--lime);
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+/* ── FAQ ── */
+#faq{background:var(--black2);padding:80px 24px}
+.faq-list{
+  display:flex;flex-direction:column;gap:10px;
+  margin-top:32px;
+}
+.faq-item{
+  background:var(--black3);
+  border:1px solid var(--gray2);
+  border-radius:16px;
+  overflow:hidden;
+  transition:border-color .2s;
+}
+.faq-item.open{border-color:rgba(200,224,0,0.25)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 20px;
+  cursor:pointer;
+  gap:12px;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+.faq-q-text{
+  font-size:15px;font-weight:500;
+  line-height:1.4;
+  color:rgba(255,255,255,0.9);
+  flex:1;
+}
+.faq-icon{
+  width:28px;height:28px;
+  border-radius:50%;
+  background:var(--black2);
+  border:1px solid var(--gray2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  transition:all .25s;
+}
+.faq-item.open .faq-icon{
+  background:rgba(200,224,0,0.1);
+  border-color:rgba(200,224,0,0.3);
+  transform:rotate(45deg);
+}
+.faq-icon svg{transition:stroke .2s}
+.faq-item.open .faq-icon svg{stroke:var(--lime)}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s cubic-bezier(.16,1,.3,1), padding .3s;
+  padding:0 20px;
+}
+.faq-item.open .faq-a{
+  max-height:200px;
+  padding:0 20px 18px;
+}
+.faq-a-text{
+  font-size:14px;
+  line-height:1.7;
+  color:rgba(255,255,255,0.55);
+  border-top:1px solid var(--gray2);
+  padding-top:14px;
+}
+
+/* ── CUSTOM CURSOR (desktop only) ── */
+@media(hover:hover){
+  *{cursor:none!important}
+  .cursor-dot{
+    position:fixed;
+    width:8px;height:8px;
+    background:var(--lime);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:transform .1s ease, opacity .2s;
+    mix-blend-mode:difference;
+  }
+  .cursor-ring{
+    position:fixed;
+    width:32px;height:32px;
+    border:1.5px solid rgba(200,224,0,0.5);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9998;
+    transform:translate(-50%,-50%);
+    transition:width .2s, height .2s, border-color .2s;
+    transition-timing-function:cubic-bezier(.16,1,.3,1);
+  }
+  a:hover ~ .cursor-ring, button:hover ~ .cursor-ring{
+    width:48px;height:48px;
+    border-color:var(--lime);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <img src="./img/logo_mv.png" alt="MUEVET+" class="nav-logo">
+  <div class="nav-links">
+    <a href="#servicios" class="nav-link">Servicios</a>
+    <a href="#planes" class="nav-link">Planes</a>
+    <a href="#proceso" class="nav-link">Proceso</a>
+    <a href="#contacto" class="nav-link">Contacto</a>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="nav-cta" target="_blank">COMENZAR</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <img src="./img/gym.jpg" alt="" class="hero-bg-img" aria-hidden="true">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <img src="./img/logo_mv.png" alt="MUEVET+" class="hero-logo">
+    <div class="hero-meta reveal">
+      <span class="hero-meta-pill">📍 Isla, Cantabria</span>
+      <span class="hero-meta-pill">🏋️ Entrenamiento personalizado</span>
+      <span class="hero-meta-pill">📏 ISAK Nivel 1</span>
+    </div>
+    <p class="hero-eyebrow">MUEVET+ · Movimiento y rendimiento</p>
+    <h1 class="hero-title">Muévete más.<br><span>Vive mejor.</span></h1>
+    <p class="hero-sub">Entrenamiento, comunidad y ciencia para ayudarte a disfrutar del movimiento.</p>
+    <div class="hero-btns">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-primary" target="_blank">
+        <span>Comenzar</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v12M4 10l5 5 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">Movimiento</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Salud</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Rendimiento</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Comunidad</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Ciencia</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Vida</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Movimiento</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Salud</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Rendimiento</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Comunidad</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Ciencia</span><span class="ticker-dot">+</span>
+    <span class="ticker-item">Vida</span><span class="ticker-dot">+</span>
+  </div>
+</div>
+
+<!-- FILOSOFÍA -->
+<section id="filosofia">
+  <span class="section-eyebrow reveal">Nuestra filosofía</span>
+  <p class="filo-quote reveal">No creemos en<br>entrenar <em>más.</em><br>Creemos en<br>entrenar <em>mejor.</em></p>
+  <div class="divider reveal"></div>
+  <p class="section-body reveal">MUEVET+ no es un gimnasio. No es una empresa de entrenamiento personal. Es una <strong>marca de movimiento</strong> que une entrenamiento, salud, ciencia y comunidad.</p>
+  <div class="filo-pills reveal">
+    <span class="pill accent">+ Movimiento</span>
+    <span class="pill accent">+ Salud</span>
+    <span class="pill">+ Rendimiento</span>
+    <span class="pill">+ Comunidad</span>
+    <span class="pill">+ Vida</span>
+    <span class="pill">Evidencia científica</span>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="victor-photo-wrap reveal">
+    <img src="./img/foto_victor.jpg" alt="Víctor — Fundador MUEVET+" class="victor-photo">
+    <div class="victor-photo-overlay"></div>
+    <div class="victor-name-badge">
+      <span class="victor-name">Víctor</span>
+      <span class="victor-role">Fundador · MUEVET+</span>
+    </div>
+  </div>
+  <div style="padding:0 24px">
+    <span class="section-eyebrow reveal">La persona que te acompañará</span>
+    <h2 class="section-title reveal">Quién está<br>detrás.</h2>
+    <div class="credentials reveal">
+      <div class="credential-item">
+        <div class="credential-icon">🎓</div>
+        <span class="credential-text">Estudiante de Ciencias de la Actividad Física y del Deporte (CAFYD)</span>
+      </div>
+      <div class="credential-item">
+        <div class="credential-icon">📏</div>
+        <span class="credential-text">Antropometrista ISAK Nivel 1 certificado</span>
+      </div>
+      <div class="credential-item">
+        <div class="credential-icon">🏃</div>
+        <span class="credential-text">Fundador de MUEVET+ y RUN+++ Run Club</span>
+      </div>
+      <div class="credential-item">
+        <div class="credential-icon">🧠</div>
+        <span class="credential-text">Entrenamiento basado en evidencia científica</span>
+      </div>
+    </div>
+    <p class="victor-copy reveal" style="margin-top:24px">Mi objetivo no es venderte un entrenamiento. Es acompañarte durante todo tu proceso de mejora — con datos, con planificación y con la honestidad que mereces.</p>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <span class="section-eyebrow reveal">Lo que ofrecemos</span>
+  <h2 class="section-title reveal">Servicios<br>MUEVET+</h2>
+  <div class="services-stack">
+
+    <!-- ISAK -->
+    <div class="service-card reveal" style="background:var(--black3)">
+      <img src="./img/isak2.jpg" alt="Análisis ISAK" class="service-card-bg" style="object-position:center top">
+      <div class="service-card-overlay"></div>
+      <div class="service-card-content">
+        <span class="service-tag">Análisis ISAK</span>
+        <h3 class="service-title">MIDE.<br>ANALIZA.<br>MEJORA.</h3>
+        <div class="service-price">30 €</div>
+        <p class="service-desc">Valoración antropométrica profesional mediante protocolo internacional ISAK Nivel 1. Conoce tu cuerpo con datos reales.</p>
+        <div class="service-features">
+          <span class="service-feature">Composición corporal completa</span>
+          <span class="service-feature">Pliegues y perímetros</span>
+          <span class="service-feature">Somatotipo</span>
+          <span class="service-feature">Informe personalizado</span>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-primary" target="_blank">Reservar →</a>
+      </div>
+    </div>
+
+    <!-- ATHLETE SUMMER -->
+    <div class="service-card featured reveal">
+      <div class="featured-badge">⭐ Premium</div>
+      <img src="./img/isak1.jpg" alt="Athlete Summer" class="service-card-bg" style="object-position:center">
+      <div class="service-card-overlay" style="background:linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.15) 100%)"></div>
+      <div class="service-card-content">
+        <img src="./img/logo_athlete.jpg" alt="Athlete Summer" style="height:48px;object-fit:contain;margin-bottom:12px;filter:brightness(1.1)">
+        <div class="service-price olive">99 €</div>
+        <p class="service-desc">El programa más completo de MUEVET+. Análisis ISAK + planificación personalizada + seguimiento continuo + reevaluaciones. Todo lo que necesitas para un verano de evolución real.</p>
+        <div class="service-features">
+          <span class="service-feature olive-dot">Análisis ISAK incluido</span>
+          <span class="service-feature olive-dot">Pruebas físicas de rendimiento</span>
+          <span class="service-feature olive-dot">Planificación 100% personalizada</span>
+          <span class="service-feature olive-dot">Seguimiento continuo</span>
+          <span class="service-feature olive-dot">Reevaluaciones periódicas</span>
+          <span class="service-feature olive-dot">Ajustes según tu evolución</span>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-plan olive-btn" target="_blank">Quiero este programa →</a>
+      </div>
+    </div>
+
+    <!-- RUN+++ -->
+    <div class="service-card run-card reveal">
+      <div class="run-card-inner">
+        <div>
+          <img src="./img/logo_run.jpg" alt="RUN+++" class="run-logo-img">
+          <h3 class="run-mantra">CORRER.<br>CONECTAR.<br>REPETIR.</h3>
+          <p class="run-desc">No es solo un run club. Es un nuevo concepto de running social. Comunidad, playa, café y 5KM cada semana en Isla, Cantabria.</p>
+        <div class="run-video-wrap">
+          <video autoplay muted loop playsinline class="run-video" poster="">
+            <source src="./img/run_video.mp4" type="video/mp4">
+          </video>
+          <div class="run-video-overlay"></div>
+          <span class="run-video-label">CORRER. CONECTAR. REPETIR.</span>
+        </div>
+          <div class="run-pills">
+            <span class="run-pill">5K al ritmo de todos</span>
+            <span class="run-pill">Playa</span>
+            <span class="run-pill">Desayuno</span>
+            <span class="run-pill">Comunidad</span>
+            <span class="run-pill">Isla, Cantabria</span>
+          </div>
+        </div>
+        <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" class="btn-dark" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Únete al grupo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAROUSEL ISAK -->
+<div id="isak-carousel">
+  <div class="carousel-header">
+    <span class="section-eyebrow">En acción</span>
+    <h3 class="section-title" style="font-size:clamp(28px,8vw,40px)">Antropometría<br>real.</h3>
+  </div>
+  <div class="carousel-track">
+    <div class="carousel-slide">
+      <img src="./img/isak1.jpg" alt="Evaluación ISAK" loading="lazy">
+      <div class="carousel-slide-overlay"></div>
+      <span class="carousel-caption">Valoración corporal</span>
+    </div>
+    <div class="carousel-slide">
+      <img src="./img/isak2.jpg" alt="Medición ISAK" loading="lazy">
+      <div class="carousel-slide-overlay"></div>
+      <span class="carousel-caption">Protocolo ISAK Nivel 1</span>
+    </div>
+    <div class="carousel-slide">
+      <img src="./img/isak3.jpg" alt="Análisis composición" loading="lazy">
+      <div class="carousel-slide-overlay"></div>
+      <span class="carousel-caption">Ciencia aplicada</span>
+    </div>
+  </div>
+</div>
+
+<!-- PLANES -->
+<section id="planes">
+  <span class="section-eyebrow reveal">Planes de entrenamiento</span>
+  <h2 class="section-title reveal">Elige tu<br>nivel.</h2>
+  <p class="section-body reveal">Tres niveles de acompañamiento para adaptarse a tus objetivos. Un mismo ecosistema, distintos niveles de personalización.</p>
+  <div class="urgencia-banner reveal">
+    <div class="urgencia-dot"></div>
+    <p class="urgencia-text"><strong>Plazas limitadas para Athlete Summer 2025.</strong> Solo quedan 3 plazas disponibles. Asegura la tuya antes de que se agoten.</p>
+  </div>
+  <div class="planes-grid" style="margin-top:32px">
+
+    <!-- ISAK PLAN -->
+    <div class="plan-card reveal">
+      <div class="plan-header">
+        <h3 class="plan-name">Análisis<br>ISAK</h3>
+        <div class="plan-price-wrap">
+          <div class="plan-price">30€</div>
+          <div class="plan-period">sesión única</div>
+        </div>
+      </div>
+      <p class="plan-desc">La puerta de entrada al ecosistema MUEVET+. Datos objetivos sobre tu cuerpo para conocer tu punto de partida.</p>
+      <div class="plan-features">
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Composición corporal
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Pliegues y perímetros
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Informe personalizado
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Objetivos y recomendaciones
+        </div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-plan ghost-plan" target="_blank">Reservar →</a>
+    </div>
+
+    <!-- PLAN ENTRENAMIENTO -->
+    <div class="plan-card reveal">
+      <div class="plan-header">
+        <h3 class="plan-name">Plan de<br>Entreno</h3>
+        <div class="plan-price-wrap">
+          <div class="plan-price">50€</div>
+          <div class="plan-period">plan completo</div>
+        </div>
+      </div>
+      <p class="plan-desc">Rutina completamente personalizada según tu nivel, experiencia y metas. Planificación profesional sin límites.</p>
+      <div class="plan-features">
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Rutina 100% personalizada
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Adaptado a tu nivel y objetivos
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Periodización profesional
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#C8E000" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#C8E000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Basado en evidencia científica
+        </div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-plan ghost-plan" target="_blank">Empezar →</a>
+    </div>
+
+    <!-- ATHLETE SUMMER PLAN -->
+    <div class="plan-card featured-plan reveal">
+      <div class="plan-badge">⭐ Más completo</div>
+      <div class="plan-header" style="margin-top:8px">
+        <div>
+          <img src="./img/logo_athlete.jpg" alt="Athlete Summer" style="height:36px;object-fit:contain;margin-bottom:6px;filter:brightness(0.9) sepia(0.3)">
+          <h3 class="plan-name" style="font-size:24px">Athlete<br>Summer</h3>
+        </div>
+        <div class="plan-price-wrap">
+          <div class="plan-price olive">99€</div>
+          <div class="plan-period">programa verano</div>
+        </div>
+      </div>
+      <p class="plan-desc">El servicio integral de MUEVET+. Acompañamiento total durante el verano para conseguir una evolución real y medible.</p>
+      <div class="plan-features">
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#a0b85a" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#a0b85a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Análisis ISAK incluido
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#a0b85a" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#a0b85a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Pruebas físicas de rendimiento
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#a0b85a" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#a0b85a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Planificación personalizada
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#a0b85a" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#a0b85a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Seguimiento continuo
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#a0b85a" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#a0b85a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Reevaluaciones periódicas
+        </div>
+        <div class="plan-feature">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#a0b85a" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#a0b85a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ajustes según tu evolución
+        </div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-plan olive-btn" target="_blank">Quiero este →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <span class="section-eyebrow reveal">¿Cómo trabajamos?</span>
+  <h2 class="section-title reveal">El proceso<br>MUEVET+</h2>
+  <div class="proceso-steps">
+    <div class="proceso-step reveal">
+      <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Reserva</div>
+        <div class="step-desc">Rellena el formulario de inicio. Cuéntanos tus objetivos y te contactamos en menos de 24h.</div>
+      </div>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Valoración inicial</div>
+        <div class="step-desc">Análisis antropométrico ISAK y pruebas físicas para conocer tu punto de partida real.</div>
+      </div>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Plan personalizado</div>
+        <div class="step-desc">Diseñamos tu planificación de entrenamiento adaptada 100% a ti, tu nivel y tus metas.</div>
+      </div>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Seguimiento</div>
+        <div class="step-desc">Acompañamiento continuo, ajustes en tiempo real y comunicación directa contigo.</div>
+      </div>
+    </div>
+    <div class="proceso-step reveal">
+      <div class="step-left"><div class="step-num">5</div></div>
+      <div class="step-content">
+        <div class="step-title">Evolución</div>
+        <div class="step-desc">Reevaluaciones periódicas para medir tu progreso con datos reales. Resultados que se ven.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="para-quien">
+  <span class="section-eyebrow reveal">¿Para quién?</span>
+  <h2 class="section-title reveal">MUEVET+<br>es para ti.</h2>
+  <p class="section-body reveal" style="margin-bottom:8px">Si quieres moverte más y sentirte mejor, este es tu sitio.</p>
+  <div class="audience-grid">
+    <div class="audience-item reveal">
+      <div class="audience-emoji">🏋️</div>
+      <span class="audience-text">Personas que quieren empezar a entrenar</span>
+    </div>
+    <div class="audience-item reveal">
+      <div class="audience-emoji">📈</div>
+      <span class="audience-text">Personas que quieren mejorar su rendimiento</span>
+    </div>
+    <div class="audience-item reveal">
+      <div class="audience-emoji">⚽</div>
+      <span class="audience-text">Futbolistas y deportistas de equipo</span>
+    </div>
+    <div class="audience-item reveal">
+      <div class="audience-emoji">👟</div>
+      <span class="audience-text">Corredores que buscan una comunidad</span>
+    </div>
+    <div class="audience-item reveal">
+      <div class="audience-emoji">🔄</div>
+      <span class="audience-text">Personas que quieren cambiar sus hábitos</span>
+    </div>
+    <div class="audience-item reveal">
+      <div class="audience-emoji">💚</div>
+      <span class="audience-text">Cualquier persona que quiera moverse más y vivir mejor</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <span class="section-eyebrow reveal">En números</span>
+  <h2 class="section-title reveal">Por qué<br>MUEVET+</h2>
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <span class="stat-number" data-target="100">0</span>
+      <span class="stat-label">Personas<br>ayudadas</span>
+    </div>
+    <div class="stat-card reveal">
+      <span class="stat-number" data-target="500">0</span>
+      <span class="stat-label">Evaluaciones<br>realizadas</span>
+    </div>
+    <div class="stat-card reveal">
+      <span class="stat-number" data-target="100" data-suffix="%">0</span>
+      <span class="stat-label">Seguimiento<br>personalizado</span>
+    </div>
+    <div class="stat-card reveal">
+      <span class="stat-number" data-target="1" data-prefix="Nv.">0</span>
+      <span class="stat-label">ISAK<br>certificado</span>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram">
+  <div class="ig-header">
+    <span class="section-eyebrow reveal">Comunidad</span>
+    <h2 class="section-title reveal">Síguenos en<br>Instagram.</h2>
+    <div class="ig-handle reveal">
+      <img src="./img/logo_mv.png" class="ig-avatar" alt="@muevet.mas">
+      <div>
+        <div class="ig-name">@muevet.mas</div>
+        <div class="ig-at">Movimiento · Salud · Comunidad</div>
+      </div>
+    </div>
+  </div>
+  <div class="ig-grid reveal">
+    <div class="ig-cell">
+      <img src="./img/run1.jpg" alt="Running" loading="lazy">
+      <div class="ig-label">Running</div>
+    </div>
+    <div class="ig-cell">
+      <img src="./img/run3.jpg" alt="Comunidad" loading="lazy">
+      <div class="ig-label">Club</div>
+    </div>
+    <div class="ig-cell">
+      <img src="./img/isak1.jpg" alt="ISAK" loading="lazy">
+      <div class="ig-label">ISAK</div>
+    </div>
+    <div class="ig-cell">
+      <img src="./img/run2.jpg" alt="RUN+++" loading="lazy">
+      <div class="ig-label">RUN+++</div>
+    </div>
+    <div class="ig-cell">
+      <img src="./img/isak3.jpg" alt="Entreno" loading="lazy">
+      <div class="ig-label">Entreno</div>
+    </div>
+    <div class="ig-cell">
+      <img src="./img/isak2.jpg" alt="Medición" loading="lazy">
+      <div class="ig-label">Ciencia</div>
+    </div>
+  </div>
+  <a href="https://www.instagram.com/muevet.mas" class="btn-ig reveal" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="url(#ig-gradient)">
+      <defs><linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="url(#ig-gradient)" stroke-width="2"/>
+      <circle cx="12" cy="12" r="4" fill="none" stroke="url(#ig-gradient)" stroke-width="2"/>
+      <circle cx="17.5" cy="6.5" r="1" fill="#e6683c"/>
+    </svg>
+    Síguenos en Instagram
+  </a>
+</section>
+
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <span class="section-eyebrow reveal">Lo que dicen</span>
+  <h2 class="section-title reveal">Resultados<br>reales.</h2>
+  <p class="section-body reveal">Personas que ya han dado el paso. Esto es lo que cuentan.</p>
+  <div class="testimonios-grid">
+
+    <div class="testimonio-card reveal">
+      <div class="testimonio-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testimonio-text">"Contraté el Athlete Summer sin saber muy bien qué esperar y fue lo mejor que hice este verano. El seguimiento es constante y nota que el plan está hecho para ti, no es una rutina genérica."</p>
+      <div class="testimonio-footer">
+        <div class="testimonio-avatar">A</div>
+        <div>
+          <div class="testimonio-name">Alba M.</div>
+          <div class="testimonio-service">Athlete Summer · Cantabria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonio-card reveal">
+      <div class="testimonio-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testimonio-text">"El análisis ISAK me abrió los ojos. Nunca había tenido datos reales sobre mi cuerpo. A partir de ahí todo tiene más sentido: cómo entreno, cómo como, cómo progreso."</p>
+      <div class="testimonio-footer">
+        <div class="testimonio-avatar">J</div>
+        <div>
+          <div class="testimonio-name">Jorge R.</div>
+          <div class="testimonio-service">Análisis ISAK · Santander</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonio-card reveal">
+      <div class="testimonio-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testimonio-text">"Empecé a correr en el RUN+++ sin experiencia y ahora no me lo pierdo. La comunidad es increíble y la playa de fondo no está mal tampoco."</p>
+      <div class="testimonio-footer">
+        <div class="testimonio-avatar">L</div>
+        <div>
+          <div class="testimonio-name">Laura G.</div>
+          <div class="testimonio-service">RUN+++ · Isla, Cantabria</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonio-card reveal">
+      <div class="testimonio-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testimonio-text">"Lo que más valoro es la honestidad. No te vende humo. Te da lo que necesitas, te explica el por qué de cada cosa y está siempre disponible cuando tienes dudas."</p>
+      <div class="testimonio-footer">
+        <div class="testimonio-avatar">M</div>
+        <div>
+          <div class="testimonio-name">Mario S.</div>
+          <div class="testimonio-service">Plan de Entrenamiento · Noja</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="cta-glow"></div>
+  <span class="cta-eyebrow reveal">¿Listo para empezar?</span>
+  <h2 class="cta-title reveal">¿Empezamos?</h2>
+  <p class="cta-sub reveal">El mejor momento para empezar fue ayer.<br>El segundo mejor momento es hoy.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-cta-big reveal" target="_blank">
+    Comenzar ahora
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq">
+  <span class="section-eyebrow reveal">FAQ</span>
+  <h2 class="section-title reveal">Preguntas<br>frecuentes.</h2>
+  <div class="faq-list">
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Necesito experiencia previa para contratar un plan?</span>
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+      </div>
+      <div class="faq-a"><p class="faq-a-text">No. Los planes están diseñados para cualquier nivel. Tanto si eres principiante absoluto como si llevas años entrenando, el punto de partida siempre es una valoración inicial para conocer exactamente dónde estás.</p></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿El servicio es presencial u online?</span>
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+      </div>
+      <div class="faq-a"><p class="faq-a-text">El Análisis ISAK es siempre presencial (Isla/Noja, Cantabria). Los planes de entrenamiento y el seguimiento se realizan de forma online, con comunicación directa por WhatsApp y videollamada cuando se necesite.</p></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Cuánto tarda en llegar mi plan de entrenamiento?</span>
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+      </div>
+      <div class="faq-a"><p class="faq-a-text">Una vez recibida tu información y completada la valoración inicial, el plan personalizado se entrega en un máximo de 48-72 horas. La calidad no se negocia, pero tampoco hacemos esperar.</p></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Qué diferencia hay entre el Plan de Entrenamiento y Athlete Summer?</span>
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+      </div>
+      <div class="faq-a"><p class="faq-a-text">El Plan de Entrenamiento es una rutina personalizada sin seguimiento continuo. Athlete Summer es un servicio integral: incluye el análisis ISAK, pruebas físicas, planificación, seguimiento semanal y reevaluaciones. Es el programa completo.</p></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Puedo unirme al RUN+++ si nunca he corrido?</span>
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+      </div>
+      <div class="faq-a"><p class="faq-a-text">Absolutamente. El RUN+++ va al ritmo de todos. No importa si nunca has corrido o si llevas años haciéndolo. La comunidad es lo primero y nadie se queda atrás. Ven a conocer Isla Cantabria corriendo.</p></div>
+    </div>
+
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">¿Cómo me pongo en contacto para empezar?</span>
+        <div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+      </div>
+      <div class="faq-a"><p class="faq-a-text">Rellena el formulario pulsando "Comenzar" en cualquier botón de la web. También puedes escribirnos directamente por Instagram (@muevet.mas) o por email. Te respondemos en menos de 24 horas.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <span class="section-eyebrow reveal">Contacto</span>
+  <h2 class="section-title reveal">Hablamos.</h2>
+  <div class="contact-items">
+    <a href="https://www.instagram.com/muevet.mas" class="contact-item reveal" target="_blank">
+      <div class="contact-icon ig">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value">@muevet.mas</div>
+      </div>
+    </a>
+    <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" class="contact-item reveal" target="_blank">
+      <div class="contact-icon wa">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">Únete al grupo RUN+++</div>
+      </div>
+    </a>
+    <a href="mailto:info.muevetmas@gmail.com" class="contact-item reveal">
+      <div class="contact-icon em">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">info.muevetmas@gmail.com</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="./img/logo_mv.png" alt="MUEVET+" class="footer-logo">
+  <div class="footer-social">
+    <a href="https://www.instagram.com/muevet.mas" target="_blank" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://chat.whatsapp.com/J52jzClYnoVD17e3LXn0wf?mode=gi_t" target="_blank" aria-label="WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="mailto:info.muevetmas@gmail.com" aria-label="Email">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+    </a>
+  </div>
+  <div class="footer-copy">
+    © 2025 MUEVET+ · Isla, Cantabria<br>
+    <span>Diseñado con ❤️ por MUEVET+</span>
+  </div>
+</footer>
+
+<script>
+
+// FAQ accordion
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Sticky bar — show after scrolling past hero
+const stickyBar = document.getElementById('stickyBar');
+const heroSection = document.getElementById('hero');
+const ctaSection = document.getElementById('cta-final');
+if (stickyBar && heroSection) {
+  const stickyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.target === heroSection) {
+        if (!entry.isIntersecting) stickyBar.classList.add('visible');
+        else stickyBar.classList.remove('visible');
+      }
+      if (ctaSection && entry.target === ctaSection) {
+        if (entry.isIntersecting) stickyBar.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  stickyObserver.observe(heroSection);
+  if (ctaSection) stickyObserver.observe(ctaSection);
+}
+
+// Custom cursor (desktop only)
+document.addEventListener('DOMContentLoaded', function() {
+  const dot = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if (!dot || !ring || !window.matchMedia('(hover:hover)').matches) return;
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+  });
+  (function loop() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a, button, .faq-q, .plan-card, .service-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      dot.style.transform = 'translate(-50%,-50%) scale(2)';
+      ring.style.width = '48px'; ring.style.height = '48px';
+      ring.style.borderColor = 'rgba(200,224,0,0.8)';
+    });
+    el.addEventListener('mouseleave', () => {
+      dot.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.width = '32px'; ring.style.height = '32px';
+      ring.style.borderColor = 'rgba(200,224,0,0.5)';
+    });
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal, .reveal-left');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// Counter animation
+const counters = document.querySelectorAll('[data-target]');
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '+';
+      let current = 0;
+      const step = target / 40;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = prefix + Math.round(current) + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 30);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(el => countObserver.observe(el));
+
+// Nav scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.style.borderBottomColor = window.scrollY > 40
+    ? 'rgba(200,224,0,0.12)' : 'rgba(200,224,0,0.08)';
+}, { passive: true });
+
+// Smooth touch feedback for cards
+document.querySelectorAll('.service-card, .plan-card, .audience-item, .credential-item').forEach(card => {
+  card.addEventListener('touchstart', () => {
+    card.style.transform = 'scale(0.99)';
+  }, { passive: true });
+  card.addEventListener('touchend', () => {
+    card.style.transform = '';
+  }, { passive: true });
+});
+</script>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-inner">
+    <p class="sticky-bar-text"><strong>3 plazas</strong> disponibles</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3Wq2BOHg5hjVbpwBPLe4IFkrsVuTr96uSk1pIMCHJ18oNZA/viewform?usp=header" class="btn-sticky" target="_blank">Comenzar →</a>
+  </div>
+</div>
+
+<!-- CURSOR (desktop) -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+</body>
+</html>
